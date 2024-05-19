@@ -1,0 +1,131 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>LeetCode Style Page</title>  
+    <style>  
+        /* Add styles for the header */  
+        header {  
+            background-color: #040404;  
+            color: #f5d0b8;  
+            padding: 20px 0;  
+            text-align: center;  
+        }  
+  
+        header h1 {  
+            margin: 0;  
+            font-size: 3em; /* Adjust the font size as needed */  
+        }  
+  
+        /* Global Styles */  
+        body {  
+            font-family: Arial, sans-serif;  
+            margin: 0;  
+            padding: 0;  
+            background-color: #f7f7f7;  
+        }  
+  
+        .container {  
+            max-width: 1200px;  
+            margin: 0 auto;  
+            padding: 20px;  
+        }  
+  
+        /* Problem List Styles */  
+        .problem-list {  
+            background-color: #fff;  
+            border-radius: 5px;  
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+            padding: 20px;  
+            margin-bottom: 20px;  
+        }  
+  
+        .problem-list h2 {  
+            margin-top: 0;  
+            color: #333;  
+        }  
+  
+        .problem-item {  
+            display: flex;  
+            align-items: center;  
+            margin-bottom: 10px;  
+        }  
+  
+        .problem-number {  
+            font-weight: bold;  
+            margin-right: 10px;  
+            color: #333;  
+        }  
+  
+        .problem-title {  
+            flex-grow: 1;  
+            color: #666;  
+        }  
+  
+        /* Buttons Styles */  
+        .solve-btn {  
+            padding: 6px 12px;  
+            background-color: #4CAF50;  
+            color: white;  
+            border: none;  
+            border-radius: 4px;  
+            cursor: pointer;  
+            text-decoration: none;  
+        }  
+  
+        .solve-btn:hover {  
+            background-color: #45a049;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <header>  
+        <h1>周祖吉的LeetCode</h1> <!-- Big LeetCode text -->  
+    </header>  
+    <div class="container">  
+        <div class="problem-list">  
+            %s
+            <!-- <h2>Problem List</h2>  
+            <div class="problem-item">  
+                <span class="problem-number">1.</span>  
+                <span class="problem-title">Two Sum</span>  
+                <a href="D:\MyWebLeetCode\Server\src\pageReq\pages\problem.html" class="solve-btn">Solve</a>  
+            </div>  
+            <div class="problem-item">  
+                <span class="problem-number">2.</span>  
+                <span class="problem-title">Three Sum</span>  
+                <a href="/problem" class="solve-btn">Solve</a>  
+            </div>   -->
+        </div>  
+    </div>
+    <script>  
+        var solveButtons = document.querySelectorAll('.solve-btn');  
+        console.log("hello World");
+        function setCookie(name, value, days) {  
+            var expires = "";  
+            if (days) {  
+                var date = new Date();  
+                date.setTime(date.getTime() + (days*24*60*60*1000));  
+                expires = "; expires=" + date.toUTCString();  
+            }  
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";  
+        } 
+        solveButtons.forEach(function(button) {  
+            button.addEventListener('click', function(event) {  
+                event.preventDefault();  
+                  
+                var problemItem = this.closest('.problem-item');  
+                  
+                var problemNumber = problemItem.querySelector('.problem-number').textContent;  
+                  
+                // console.log('Problem Number:', problemNumber);  
+                setCookie('problem_id', problemNumber, 7);
+          
+                window.location.href = this.href;  
+            });  
+        });  
+         
+    </script>
+</body>  
+</html>

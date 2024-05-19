@@ -1,0 +1,5 @@
+{  
+    "title": "Sum of Two Numbers",  
+    "description": "Given an integer array nums and a target value, find two integers in the array such that their sum is equal to the target value. Return the indices of the two integers.",
+    "difficulty": "Easy"
+}
